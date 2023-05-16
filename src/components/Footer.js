@@ -3,11 +3,12 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div>
-      <div className="flex">
+    <div className='my-5'>
+      <div className="flex justify-center">
         <Link href={'/'} className="w-[20%]">
-          <img src="./netflixLogo.png" alt="netflixLogo" />
+          <img src="./netflixLogo.png" alt="netflixLogo" className='w-[40%]' />
         </Link>
+        
 
       </div>
     </div>

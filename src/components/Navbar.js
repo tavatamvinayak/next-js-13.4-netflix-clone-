@@ -5,8 +5,11 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { BsSearch, BsFillPersonFill } from 'react-icons/bs';
 import { AiFillCloseCircle, AiOutlineAlignRight } from 'react-icons/ai';
+import { useRouter } from "next/navigation";
 
 function Navbar() {
+
+    const router = useRouter();
 
     const [InputOpen, setInputOpen] = useState("hidden");
 
@@ -17,6 +20,20 @@ function Navbar() {
         setInputOpen(" hidden")
     }
 
+    // // search
+    const [inputText, setInputText] = useState('');
+    const inputSearch = (e) => {
+        setInputText(e.target.value);
+        // console.log(inputText)
+    }
+    const Searching = (e) => {
+        e.preventDefault();
+        
+        router.push(`/search/${inputText}`)
+        console.log(inputText)
+    }
+
+
 
     return (
         // 'bg-orange-600 sm:bg-yellow-400 md:bg-yellow-700 lg:bg-pink-600 xl:bg-lime-400'
@@ -26,16 +43,20 @@ function Navbar() {
                     <Link href={'/'} className="w-[20%]">
                         <img src="./netflixLogo.png" alt="netflixLogo" />
                     </Link>
-                    <nav className="hidden  md:block">
+                    <nav className="  ">
                         <Link href={'/'} className="mr-5 text-white hover:text-red-600  hover:font-bold">Home</Link>
                         <Link href={'/tvshow'} className="mr-5 text-white hover:text-red-600  hover:font-bold">TV Shows</Link>
                         <Link href={'/movies'} className="mr-5 text-white hover:text-red-600  hover:font-bold">Movies</Link>
                         <Link href={'/new&popular'} className="mr-5 text-white hover:text-red-600 hover:font-bold ">New & Popular</Link>
                         <Link href={'/mylist'} className="mr-5 text-white hover:text-red-600  hover:font-bold">My List</Link>
                     </nav>
-                    <div className='text-white flex text-2xl'>
-                        <div className='cursor-pointer flex  hover:text-red-600 '> <input type="text" className={`w-[100%] rounded-md ${InputOpen} `} />
-                            <AiFillCloseCircle className={`${InputOpen}`} onClick={Close} />  <BsSearch className='ml-3' onClick={Open} />
+                    <div className='text-white flex text-2xl items-center'>
+                        <div className='cursor-pointer flex text-yellow-800  hover:text-red-600 '>
+                            <form onSubmit={Searching} >
+                                <input type="text" className={`w-[100%] px-3 rounded-md ${InputOpen} `} onChange={inputSearch} />
+                            </form>
+                            <AiFillCloseCircle className={`${InputOpen}`} onClick={Close} />  
+                            <BsSearch className='ml-3 text-white' onClick={Open} />
                         </div>
                         <Link href={'/'} className='ml-5 cursor-pointer  hover:text-red-600'><BsFillPersonFill /></Link>
 

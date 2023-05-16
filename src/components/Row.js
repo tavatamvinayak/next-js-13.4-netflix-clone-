@@ -25,7 +25,7 @@ function Row({ title, movies }) {
 
 
 
-    <div className="space-y-0.5 md:space-y-2">
+    <div className="space-y-0.5 md:space-y-2 px-10">
       <h2 className="w-56 mt-6 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">
         {title}
       </h2>

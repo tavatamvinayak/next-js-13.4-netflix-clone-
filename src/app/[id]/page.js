@@ -13,9 +13,9 @@ async function movieIdPage({params}) {
     // console.log(res.backdrop_path)
   const trailerObj = res;
   // console.log(trailerObj)
-    const trailerIndex = trailerObj.videos.results.findIndex((e) => e.type === "Trailer")
+    const trailerIndex = trailerObj.videos.results.findIndex((e) => e.type === "Trailer") 
   // console.log(trailerIndex)
-  const trailerURL = `https://www.youtube.com/watch?v=${trailerObj.videos.results[trailerIndex].key}`;
+  const trailerURL = `https://www.youtube.com/watch?v=${trailerObj.videos.results[trailerIndex].key || "Omg5ihAMTtI"}`;
   // console.log(trailerURL);
 
   return (

@@ -37,7 +37,7 @@ const MovieDetails = ({trailerObj ,trailerURL }) => {
       <div className="container  overflow-hidden  ">
         <div className="flex flex-col space-y-2 py-16 md:space-y-4 h-[100vh] justify-center lg:pb-12 ">
           <div className="absolute top-0 left-0 -z-10 h-screen w-[98.7vw] scrollbar-hide">
-            <Image fill src={`${ImgBaseUrl}${trailerObj.backdrop_path || trailerObj.poster_path}`} alt={trailerObj.id} className='object-cover scrollbar-hide' />
+            <Image fill src={`${ImgBaseUrl}${trailerObj.backdrop_path || trailerObj.poster_path}`|| {}} alt={trailerObj.id} className='object-cover scrollbar-hide' />
           </div>
           <div className='px-5  '>
             <h1 className=' text-2xl font-bold md:text-4xl lg:text-7xl'>
