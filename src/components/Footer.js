@@ -1,9 +1,15 @@
+import Link from 'next/link'
 import React from 'react'
 
 function Footer() {
   return (
     <div>
-      footer
+      <div className="flex">
+        <Link href={'/'} className="w-[20%]">
+          <img src="./netflixLogo.png" alt="netflixLogo" />
+        </Link>
+
+      </div>
     </div>
   )
 }
