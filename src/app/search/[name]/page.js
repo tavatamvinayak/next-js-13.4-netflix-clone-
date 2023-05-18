@@ -31,7 +31,7 @@ async function movieNameDetails({ params }) {
       <h1 className='text-5xl text-red-500'>this content only adult 18+ sorry</h1>
     </>))
 
-
+// // shows for new next
   const seriesBtn = () => {
     setOpenSeries(" ")
   }
@@ -39,6 +39,7 @@ async function movieNameDetails({ params }) {
     setOpenPeople(" ")
   }
 
+  // // adult checks changes
   const Yes18 =()=>{
     setAdultYesNo("true")
     setYesNoHide("hidden")
