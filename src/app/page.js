@@ -124,7 +124,7 @@ async function Home() {
        <Row title={`Romance Movies`} movies={romanceMoviesWATCH} />
        <Row title={`Documentaries`} movies={documentariesWATCH} /> 
 
-      <Footer/>
+     
 
     </div>
   )
