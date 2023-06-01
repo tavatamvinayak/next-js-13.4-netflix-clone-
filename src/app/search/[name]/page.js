@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import SearchDetails from '@/components/SearchDetails';
 import dynamic from 'next/dynamic';
 
-async function movieNameDetails({ params }) {
+async function MovieNameDetails({ params }) {
   const name = params.name
   const [FetchFail, setFetchFail] = useState("");
   /// adult 18+ or not
@@ -111,4 +111,4 @@ async function movieNameDetails({ params }) {
 }
 
 // export default movieNameDetails;
-export default dynamic(() => Promise.resolve(movieNameDetails), { ssr: false });
+export default dynamic(() => Promise.resolve(MovieNameDetails), { ssr: false });

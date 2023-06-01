@@ -36,10 +36,10 @@ useEffect(()=>{
                     }
                 </div>
                 <div className='mx-1 my-3'>
-                    <h1 className='text-red-400 text-2xl'>production_countries"</h1>
+                    <h1 className='text-red-400 text-2xl'>production_countries</h1>
                     {
-                        trailerObj.production_countries.map((e) => <>
-                            <div>
+                        trailerObj.production_countries.map((e ,i) => <>
+                            <div key={i}>
                                 <p> {e.name} </p>
                             </div>
                         </>)
@@ -50,13 +50,13 @@ useEffect(()=>{
                 <div className=' '>
                     <h1 className='text-red-400 text-2xl'>genres</h1>
                     {
-                        trailerObj.genres.map((e) => <p> {e.name} </p>)
+                        trailerObj.genres.map((e , i) => <p key={i}> {e.name} </p>)
                     }
                 </div>
                 <div className=' my-2 '>
                     <h1 className='text-red-400 text-2xl'>spoken_languages</h1>
                     {
-                        trailerObj.spoken_languages.map((e) => <p>{e.name}</p>)
+                        trailerObj.spoken_languages.map((e ,i ) => <p key={i}>{e.name}</p>)
                     }
                     <h1>{trailerObj.tagline}</h1>
                 </div>
