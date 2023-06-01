@@ -50,6 +50,11 @@ function Navbar() {
     }
 
 
+    // // cookies already have a JSON TOKEN
+    const Token = Cookies.get("token");
+    // console.log(Token);
+    
+
 
 
 return (
@@ -74,7 +79,13 @@ return (
                         <AiFillCloseCircle className={`${InputOpen}`} onClick={Close} />
                         <BsSearch className='ml-1 text-white' onClick={Open} />
                     </div>
-                    <Link href={'/login'} className='ml-5 cursor-pointer  hover:text-red-600'><BsFillPersonFill /></Link>
+                   
+                    {
+                        // // if user already login 
+                       (Token) ? <Link href={`/`} className='ml-5 cursor-pointer text-green-500 hover:text-red-600'><BsFillPersonFill className='text-green-500' /></Link> : <Link href={`/login`} className='ml-5 cursor-pointer  hover:text-red-600'><BsFillPersonFill /></Link>
+                    }
+
+                    
 
                     <div className='sm:hidden' onClick={ShowNavMobile}>
                         <AiOutlineAlignRight />
