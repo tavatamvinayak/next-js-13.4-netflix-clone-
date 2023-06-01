@@ -1,9 +1,14 @@
 "use client"
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import Thumbnail from './Thumbnail'
 
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function Row({ title, movies }) {
   const rowRef = useRef(null);
@@ -20,12 +25,16 @@ function Row({ title, movies }) {
     }
   };
 
-
+// // aos
+  useEffect(()=>{
+    AOS.init();
+},[])
   return (
 
 
 
-    <div className="space-y-0.5 md:space-y-2 px-10">
+    <div className="space-y-0.5 md:space-y-2 px-10" data-aos="fade-up"
+    data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
       <h2 className="w-56 mt-6 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">
         {title}
       </h2>

@@ -110,7 +110,7 @@ async function Home() {
   const NetFlix_Documentaries = await documentaries();
   const documentariesWATCH = NetFlix_Documentaries.results
   return (
-    <div className='font-sans overflow-y-hidden'>
+    <div className='font-sans overflow-y-hidden '>
       <p className='text-center'>HOME</p>
       <Hero />
 

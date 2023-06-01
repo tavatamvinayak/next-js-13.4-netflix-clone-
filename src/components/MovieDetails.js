@@ -16,6 +16,8 @@ import requests from '../../utils/request';
 import { BsPlayBtn } from 'react-icons/bs';
 import { IoIosInformationCircle } from 'react-icons/io';
 
+// motion 
+import { motion } from "framer-motion"
 
 
 const MovieDetails = ({trailerObj ,trailerURL }) => {
@@ -34,7 +36,7 @@ const MovieDetails = ({trailerObj ,trailerURL }) => {
 
   return (
     <div>
-      <div className="container  overflow-hidden  ">
+      <div className="container  overflow-hidden">
         <div className="flex flex-col space-y-2 py-16 md:space-y-4 h-[100vh] justify-center lg:pb-12 ">
           <div className="absolute top-0 left-0 -z-10 h-screen w-[98.7vw] scrollbar-hide">
             <Image fill src={`${ImgBaseUrl}${trailerObj.backdrop_path || trailerObj.poster_path}`|| {}} alt={trailerObj.id} className='object-cover scrollbar-hide' />
@@ -48,14 +50,14 @@ const MovieDetails = ({trailerObj ,trailerURL }) => {
             </p>
 
             <div className='flex space-x-3'>
-              <button onClick={youtubeOpen} className=' bg-gray-400 m-2 flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl'  >
+              <motion.button onClick={youtubeOpen} whileHover={{ scale: 1.2 }} className=' bg-gray-400 m-2 flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl'  >
                 <BsPlayBtn className='text-4xl text-orange-600' />
                 play
-              </button>
-              <button className=' bg-gray-400 m-2 flex items-center gap-x-2 rounded   px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl'>
+              </motion.button>
+              <motion.button whileHover={{ scale: 1.2 }} className=' bg-gray-400 m-2 flex items-center gap-x-2 rounded   px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl'>
                 <IoIosInformationCircle className="text-4xl text-orange-600" />
                 more info
-              </button>
+              </motion.button>
             </div>
           </div>
           <div onClick={youtubeClose} className={`z-50 absolute top-0 w-[100%]  h-[100%] flex justify-center items-center bg-[#000000b3] ${YoutubeOpenClose}`} >
